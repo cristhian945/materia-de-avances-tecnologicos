@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificador de Mascotas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐾 Clasificador de Mascotas</h1>
+            <p>Chatbot + Clasificador de Perros/Gatos con IA</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Sección Chatbot -->
+            <div class="seccion">
+                <h2>💬 Chatbot Veterinario</h2>
+                <div class="chat-container">
+                    <div id="mensajes-chat" class="mensajes-chat">
+                        <div class="mensaje mensaje-bot">
+                            ¡Hola! Soy tu asistente veterinario. Puedo ayudarte con preguntas sobre mascotas y clasificar imágenes de perros y gatos.
+                        </div>
+                    </div>
+                    <div class="entrada-chat">
+                        <input type="text" id="entrada-usuario" placeholder="Escribe tu pregunta sobre mascotas...">
+                        <button id="btn-enviar">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección Clasificador -->
+            <div class="seccion">
+                <h2>📸 Clasificador Perros/Gatos</h2>
+                
+                <div class="area-subida" id="area-subida">
+                    <div class="contenido-subida">
+                        <div class="icono-subida">📁</div>
+                        <p>Haz clic aquí o arrastra una imagen</p>
+                        <small>Formatos: JPG, PNG, GIF</small>
+                        <input type="file" id="entrada-imagen" accept="image/*">
+                    </div>
+                </div>
+
+                <div class="vista-previa" id="vista-previa">
+                    <!-- Vista previa de imagen -->
+                </div>
+
+                <button id="btn-clasificar" class="btn-clasificar" disabled>Clasificar Imagen</button>
+
+                <div class="resultados" id="resultados">
+                    <!-- Resultados aparecerán aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
